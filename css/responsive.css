@@ -60,6 +60,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'roboto-regular';
+    src: url('../fonts/RobotoCondensed-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 
 
@@ -76,7 +83,7 @@ body{
 }
 
 .wrapper{
-    max-width: 1100px;
+    max-width: 1100px; 
     margin: 0 auto;
     position: relative;
 }
@@ -126,25 +133,10 @@ header{
 }
 
 header .logo{
-    margin-top: 40px;
+    margin-top: 10px;
+    margin-left: 0px;
     float: left;
 }
-
-header a.hamburger{
-    text-decoration: none;
-    display: none;
-    float: right;
-    margin-top: 41px;
-    width: 24px;
-    height: 19px;
-    background: url('../img/hamburger_icon.png') no-repeat;
-}
-
-header a.hamburger.opned{
-    width: 19px;
-    background: url('../img/close_menu_icon.png') no-repeat;
-}
-
 
 header nav{
     float: right;
@@ -218,17 +210,17 @@ header nav .login_btn:hover{
     width: 100%;
     position: absolute;
     text-align: center;
-    top: 50%;
+    top: 40%;
     margin-top: -105px;
     z-index: 10;
 }
 
 .hero .caption h2{
-    color: #000;
-    font-family: "p22_corinthia", Helvetica, Arial, sans-serif;
+    color: #009fe2;
+    font-family: "roboto-regular", Helvetica, Arial, sans-serif;
     font-size: 100px;
     font-weight: lighter;
-    margin: -50;
+    margin: 0px;
     position: relative;
     display: block;
 }
