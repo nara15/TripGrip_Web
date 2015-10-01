@@ -207,7 +207,7 @@ header nav .login_btn:hover{
     width: 100%;
     height: 900px;
     position: relative;
-    background: url('../img/hero.jpg') no-repeat bottom center;
+    background: url('../img/hero_room.jpg') no-repeat bottom center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -228,19 +228,36 @@ header nav .login_btn:hover{
     font-family: "p22_corinthia", Helvetica, Arial, sans-serif;
     font-size: 100px;
     font-weight: lighter;
-    margin: 0;
+    margin: -50;
     position: relative;
     display: block;
 }
 
 .hero .caption h3{
-    color: #fff;
+    color: #000;
     font-family: "lato-regular", Helvetica, Arial, sans-serif;
     font-size: 14px;
     margin: -15px 0 0 25px;
     left: 1px;
 }
 
+.hero .caption .video-container{
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.hero .caption .video-container iframe;
+.hero .caption .video-container object;
+.hero .caption .video-container emded {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%
+}
 
 
 
