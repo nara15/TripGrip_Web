@@ -5,7 +5,7 @@
 var app = angular.module('tripGripWebApp', ['ngRoute']);
 
 /**
-* Fabrica de funciones para consumir el servicio web
+* Fábrica de funciones para consumir el servicio web
 */
 
 app.factory("services", function($http) {
