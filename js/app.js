@@ -11,8 +11,8 @@ var app = angular.module('tripGripWebApp', ['ngRoute']);
 app.factory("services", function($http) {
 	var serviceBase = 'http://tripgrip.5gbfree.com/php_webservice/'
   	var obj = {};
-    obj.getPedido = function(){
-    	return $http.get(serviceBase + 'getPedido?id=1234').then(function(response){
+    obj.getHabitacion = function(id){
+    	return $http.get(serviceBase + 'getPedido?id=' + id).then(function(response){
     		return response.data;
     	})
     }
@@ -46,6 +46,17 @@ app.config(['$routeProvider', function ($routeProvider){
         templateUrl: 'partials/habitaciones.html',
         controller: 'HabitacionesCtrl'
     })
+    .when("/verHabitacion/:idHabitacion", {
+        title: 'habitación',
+        templateUrl: 'partials/habitacion.html',
+        controller: 'verHabitacionCtrl',
+        resolve: {
+            habitacion: function(services, $route){
+                var idHabitacion = $route.current.params.idHabitacion;
+                return services.getHabitacion(idHabitacion);
+            }
+        }
+    })
 	.otherwise({
 		redirectTo: '/'
 	});
@@ -61,12 +72,6 @@ app.controller('PedidosCtrl', function ($scope, services) {
     }); 
 });
 
-/*
- app.controller('PedidosCtrl', function($scope, $http) {
-      $http.get('http://tripgrip.5gbfree.com/php_webservice/getPedidos?id=1234')
-      .success(function(response) {$scope.pedidos = response});
- }); */
-
 /**
 * Controla la petición de las habitaciones
 */
@@ -74,4 +79,11 @@ app.controller('HabitacionesCtrl', function ($scope, services) {
     services.getPedidos().then(function(response){
         $scope.habitaciones = response;
     }); 
+});
+
+/**
+* Controla la petición de una habitación
+*/
+app.controller('verHabitacionCtrl', function($scope, $rootScope, $location, $routeParams, services, customer){
+
 });
