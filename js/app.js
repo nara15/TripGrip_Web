@@ -11,7 +11,7 @@ var app = angular.module('tripGripWebApp', ['ngRoute']);
 app.factory("services", function($http) {
 	var serviceBase = 'http://tripgrip.5gbfree.com/php_webservice/'
   	var obj = {};
-    obj.getHabitacion = function(id){
+    obj.getPedido = function(id){
     	return $http.get(serviceBase + 'getPedido?id=' + id).then(function(response){
     		return response.data;
     	})
@@ -49,11 +49,11 @@ app.config(['$routeProvider', function ($routeProvider){
     .when("/verHabitacion/:idHabitacion", {
         title: 'habitación',
         templateUrl: 'partials/habitacion.html',
-        controller: 'verHabitacionCtrl',
+        controller: 'verPedidoCtrl',
         resolve: {
-            habitacion: function(services, $route){
+            pedido: function(services, $route){
                 var idHabitacion = $route.current.params.idHabitacion;
-                return services.getHabitacion(idHabitacion);
+                return services.getPedido(idHabitacion);
             }
         }
     })
@@ -84,6 +84,7 @@ app.controller('HabitacionesCtrl', function ($scope, services) {
 /**
 * Controla la petición de una habitación
 */
-app.controller('verHabitacionCtrl', function($scope, $rootScope, $location, $routeParams, services, customer){
-
+app.controller('verPedidoCtrl', function($scope, $rootScope, $location, $routeParams, services, pedido) {
+    var idHabitacion = ($routeParams.idHabitacion) ? parseInt($routeParams.idHabitacion) : 0;
+    $scope.pedido = pedido;
 });
