@@ -10,6 +10,7 @@
     
     - Fonts
     - General CSS
+    - FAQ
     - Header
     - Hero
     - Search
@@ -161,6 +162,19 @@ header nav .login_btn:hover{
     color: #1c3655;
 }
 
+
+
+
+
+/*   FAQ         */
+.faqheader {
+    font-size: 27px;
+    margin: 20px;
+}
+
+.panel-heading.faqtitle {
+    color: #454444;
+}
 
 
 

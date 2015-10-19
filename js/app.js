@@ -36,6 +36,10 @@ app.config(['$routeProvider', function ($routeProvider){
 		title: 'Página Principal',
         templateUrl: 'partials/home.html'
 	})
+    .when("/faq", {
+        title: 'Preguntas frecuentes',
+        templateUrl: 'partials/faq.html'
+    })
 	.when("/pedidos", {
 		title: 'Pedidos',
 		templateUrl: 'partials/pedidos.html',
