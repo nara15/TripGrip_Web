@@ -9,15 +9,15 @@ var app = angular.module('tripGripWebApp', ['ngRoute']);
 */
 
 app.factory("services", function($http) {
-	var serviceBase = 'http://tripgrip.5gbfree.com/php_webservice/'
+	var serviceBase = 'https://proyectos-m4ritox.c9.io/WebService/'
   	var obj = {};
     obj.getPedido = function(id){
     	return $http.get(serviceBase + 'getPedido?id=' + id).then(function(response){
     		return response.data;
     	})
     }
-    obj.getPedidos = function(){
-    	return $http.get(serviceBase + 'getPedidos').then(function(response){
+    obj.getAnuncios = function(){
+    	return $http.get(serviceBase + 'getAnuncios').then(function(response){
     		return response.data;
     	})
     }
@@ -80,7 +80,7 @@ app.controller('PedidosCtrl', function ($scope, services) {
 * Controla la petición de las habitaciones
 */
 app.controller('HabitacionesCtrl', function ($scope, services) {
-    services.getPedidos().then(function(response){
+    services.getAnuncios().then(function(response){
         $scope.habitaciones = response;
     }); 
 });
