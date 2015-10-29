@@ -67,16 +67,6 @@ app.config(['$routeProvider', function ($routeProvider){
 }]);
 
 /**
-* Controla la petición de pedidos
-*/
-
-app.controller('PedidosCtrl', function ($scope, services) {
-    services.getPedidos().then(function(response){
-        $scope.pedidos = response;
-    }); 
-});
-
-/**
 * Controla la petición de las habitaciones
 */
 app.controller('HabitacionesCtrl', function ($scope, services) {
