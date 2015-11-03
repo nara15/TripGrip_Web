@@ -1,7 +1,18 @@
 
-
 angular.module('tripGripWebApp')
-.controller('verPedidoCtrl', function($scope, $rootScope, $location, $routeParams, services, pedido) {
-    var idHabitacion = ($routeParams.idHabitacion) ? parseInt($routeParams.idHabitacion) : 0;
-    $scope.pedido = pedido;
-});
+.controller('Centro_AyudaController', ['$scope', 'ModalService', function($scope, ModalService) {
+  $scope.showYesNo = function()
+  {
+   
+    ModalService.showModal({
+      templateUrl: "partials/yesno.html",
+      controller: "YesNoController"
+    }).then(function(modal) {
+      modal.element.modal();
+      modal.close.then(function(result) {
+        $scope.yesNoResult = result ? "You said Yes" : "You said No";
+      });
+    }); 
+
+  };
+}]);
