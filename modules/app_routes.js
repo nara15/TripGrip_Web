@@ -27,13 +27,14 @@ angular.module('tripGripWebApp').config(['$routeProvider', function ($routeProvi
     })
     .when("/verHabitacion/:idHabitacion", {
         title: 'habitación',
-        templateUrl: 'partials/habitacion.html',
-        controller: 'verPedidoCtrl',
+        templateUrl: 'partials/habitacion.html'
+        //controller: 'verPedidoCtrl',
+        /*
         resolve: {
             pedido: function(services, $route){
                 var idHabitacion = $route.current.params.idHabitacion;
                 return services.getPedido(idHabitacion);
             }
-        }
+        }*/
     });
 }]);
