@@ -9,7 +9,7 @@ angular.module('tripGripWebApp').factory("services", function($http) {
     }
     obj.getAnuncios = function(){
     	return $http.get(serviceBase + 'getAnuncios').then(function(response){
-    		return response.data;
+    		return response.data.anuncios;
     	})
     }
     return obj;   
