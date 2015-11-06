@@ -15,26 +15,28 @@ angular.module('tripGripWebApp').config(['$routeProvider', function ($routeProvi
         templateUrl: 'partials/centro_ayuda.html',
         controller: 'Centro_AyudaController'
     })
-	.when("/pedidos", {
-		title: 'Pedidos',
-		templateUrl: 'partials/pedidos.html',
-		controller: 'PedidosCtrl'
+	.when("/verMultimedia", {
+		title: 'Multimedia',
+		templateUrl: 'partials/multimedia.html'
 	})
     .when("/habitaciones", {
         title: 'habitaciones',
         templateUrl: 'partials/habitaciones.html',
         controller: 'HabitacionesController'
     })
-    .when("/verHabitacion/:idHabitacion", {
+    .when("/verHabitacion/:idaAnuncio", {
         title: 'habitación',
-        templateUrl: 'partials/habitacion.html'
-        //controller: 'verPedidoCtrl',
-        /*
+        templateUrl: 'partials/habitacion.html',
+        controller: "HabitacionController",
         resolve: {
-            pedido: function(services, $route){
-                var idHabitacion = $route.current.params.idHabitacion;
-                return services.getPedido(idHabitacion);
+            anuncio: function(services, $route){
+                var idanuncio = $route.current.params.idaAnuncio;
+                return services.getAnuncio(idanuncio);
             }
-        }*/
-    });
+        }
+    })
+    .when("/verNosotros", {
+        title: "Nosotros",
+        templateUrl: "partials/nosotros.html"
+    })
 }]);
